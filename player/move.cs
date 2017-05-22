@@ -8,7 +8,7 @@ public class move : MonoBehaviour {
 	Vector2 dest = Vector2.zero;
 	// Use this for initialization
 	void Start () {
-		
+		dest=(Vector2)transform.position;
 	}
 	
 	// Update is called once per frame
@@ -22,16 +22,16 @@ public class move : MonoBehaviour {
 		GetComponent<Rigidbody2D>().MovePosition(p);
 
 		// 按键移动
-		if(1+1==2){
-			if (Input.GetKey(KeyCode.UpArrow) && valid(Vector2.up))
-				dest = (Vector2)transform.position + Vector2.up;
-			if (Input.GetKey(KeyCode.RightArrow) && valid(Vector2.right))
-				dest = (Vector2)transform.position + Vector2.right;
-			if (Input.GetKey(KeyCode.DownArrow) && valid(-Vector2.up))
-				dest = (Vector2)transform.position - Vector2.up;
-			if (Input.GetKey(KeyCode.LeftArrow) && valid(-Vector2.right))
-				dest = (Vector2)transform.position - Vector2.right;
-		}
+		if (Input.GetKey(KeyCode.UpArrow) && valid(Vector2.up))
+			dest = (Vector2)transform.position + Vector2.up;
+		if (Input.GetKey(KeyCode.RightArrow) && valid(Vector2.right))
+			dest = (Vector2)transform.position + Vector2.right;
+		if (Input.GetKey(KeyCode.DownArrow) && valid(-Vector2.up))
+			dest = (Vector2)transform.position - Vector2.up;
+		if (Input.GetKey(KeyCode.LeftArrow) && valid(-Vector2.right))
+			dest = (Vector2)transform.position - Vector2.right;
+		
+			
 
 		// Animation Parameters
 		Vector2 dir = dest - (Vector2)transform.position;
