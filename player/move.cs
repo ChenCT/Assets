@@ -8,7 +8,6 @@ public class move : MonoBehaviour {
 	Vector2 dest = Vector2.zero;
 	// Use this for initialization
 	void Start () {
-		dest = transform.position;
 		
 	}
 	
@@ -23,7 +22,6 @@ public class move : MonoBehaviour {
 		GetComponent<Rigidbody2D>().MovePosition(p);
 
 		// 按键移动
-		if ((Vector2)transform.position == dest) {
 			if (Input.GetKey(KeyCode.UpArrow) && valid(Vector2.up))
 				dest = (Vector2)transform.position + Vector2.up;
 			if (Input.GetKey(KeyCode.RightArrow) && valid(Vector2.right))
@@ -32,7 +30,7 @@ public class move : MonoBehaviour {
 				dest = (Vector2)transform.position - Vector2.up;
 			if (Input.GetKey(KeyCode.LeftArrow) && valid(-Vector2.right))
 				dest = (Vector2)transform.position - Vector2.right;
-		}
+
 
 		// Animation Parameters
 		Vector2 dir = dest - (Vector2)transform.position;
