@@ -16,6 +16,8 @@ public class 碰撞 : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D food) {
 		if (food.name == "player") {
 			Destroy (gameObject);
+			GameObject obj = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+			obj.transform.position = new Vector2 (5, 5);
 		}
 	}
 }
